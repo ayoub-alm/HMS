@@ -1,0 +1,83 @@
+<mat-drawer-container class="example-container">
+  <mat-drawer #drawer class="example-sidenav custom-drawer-width bg-primary-subtle" mode="side">
+    <div class="container-fluid side-nav">
+      <mat-list class="mt-2">
+        <p class="text-center">
+          <img src="/logo.jpg" alt="" width="150px" class="rounded-3 shadow-lg">
+        </p>
+        <mat-divider class="mt-4"></mat-divider>
+        <a [routerLink]="'/admin'"  >
+          <mat-list-item class="d-flex justify-content-start align-items-center">
+            <button mat-button class="example-icon text-start d-flex justify-content-start text-primary" aria-label="Logout" style="width: 100%;">
+              Tableau de borde
+              <mat-icon>bar_chart</mat-icon>
+            </button>
+          </mat-list-item>
+        </a>
+        <mat-divider></mat-divider>
+        
+        <a [routerLink]="'/admin/patient'" >
+          <mat-list-item class="d-flex justify-content-start align-items-center">
+            <button mat-button class="example-icon text-start d-flex justify-content-start text-primary" aria-label="Logout" style="width: 100%;">
+              Patients
+              <mat-icon>account_circle</mat-icon>
+            </button>
+          </mat-list-item>
+        </a>
+        <mat-divider></mat-divider>
+        <a [routerLink]="'/admin/patient'" >
+          <mat-list-item class="d-flex justify-content-start align-items-center">
+            <button mat-button class="example-icon text-start d-flex justify-content-start text-primary" aria-label="Logout" style="width: 100%;">
+              Visites
+              <mat-icon>medical_services</mat-icon>
+            </button>
+          </mat-list-item>
+        </a>
+        <mat-divider></mat-divider>
+        <a [routerLink]="'/admin/patient'" >
+          <mat-list-item class="d-flex justify-content-start align-items-center">
+            <button mat-button class="example-icon text-start d-flex justify-content-start text-primary" aria-label="Logout" style="width: 100%;">
+              Controls 
+              <mat-icon>local_hospital</mat-icon>
+            </button>
+          </mat-list-item>
+        </a>
+        <mat-divider></mat-divider>
+        
+        <a [routerLink]="'/admin/patient'" >
+          <mat-list-item class="d-flex justify-content-start align-items-center">
+            <button mat-button class="example-icon text-start d-flex justify-content-start text-primary" aria-label="Logout" style="width: 100%;">
+              Operations
+              <mat-icon>healing</mat-icon>
+             
+              <mat-icon>health_and_safety</mat-icon>
+            </button>
+          </mat-list-item>
+        </a>
+        <mat-divider></mat-divider>
+      </mat-list>
+    </div>
+  </mat-drawer>
+
+  <div class="example-sidenav-content">
+    <mat-toolbar class="sticky-top">
+      <button mat-icon-button (click)="drawer.toggle()" class="example-icon text-white" aria-label="Toggle sidenav">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>Dr.Hiba Othman</span>
+      <span class="example-spacer"></span>
+      <button mat-icon-button class="example-icon favorite-icon text-white" aria-label="Account">
+        <mat-icon>account_circle</mat-icon>
+      </button>
+      <button mat-icon-button class="example-icon text-white" aria-label="Logout">
+        <mat-icon>logout</mat-icon>
+      </button>
+      <button mat-icon-button class="example-icon text-white" aria-label="Logout">
+        <mat-icon>settings</mat-icon>
+      </button>
+    </mat-toolbar>
+
+    <!-- Router outlet for dynamic views -->
+    <router-outlet></router-outlet>
+  </div>
+</mat-drawer-container>
