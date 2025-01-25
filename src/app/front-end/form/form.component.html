@@ -1,0 +1,146 @@
+<app-nav-bar></app-nav-bar>
+<section id="inscription" class="py-5">
+  <div class="container">
+    <h2 class="display-4 text-center fw-bold text-danger mb-4">Inscrivez-Vous</h2>
+    <p class="text-muted text-center mb-4">
+      Remplissez le formulaire ci-dessous pour rejoindre notre mouvement et faire une différence.
+    </p>
+    <div class="row">
+      <div class="col-md-12 mx-auto bg-light mat-elevation-z2 p-5 rounded-3 shadow-sm">
+        <form class="row">
+          <div class="mb-3 col-6">
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Prénom</mat-label>
+              <input matInput type="text" id="firstName" placeholder="Votre prénom" required>
+            </mat-form-field>
+          </div>
+          <div class="mb-3 col-6">
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Nom</mat-label>
+              <input matInput type="text" id="lastName" placeholder="Votre nom" required>
+            </mat-form-field>
+          </div>
+          <div class="mb-3 col-6">
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label>CIN</mat-label>
+              <input matInput type="text" id="cin" placeholder="Votre numéro CIN" required>
+            </mat-form-field>
+          </div>
+          <div class="mb-3 col-6">
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Email</mat-label>
+              <input matInput type="email" id="email" placeholder="Votre adresse email" required>
+            </mat-form-field>
+          </div>
+          <div class="mb-3 col-6">
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Téléphone</mat-label>
+              <input matInput type="tel" id="phone" placeholder="Votre numéro de téléphone" required>
+            </mat-form-field>
+          </div>
+          <div class="mb-3 col-6">
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Date de Naissance</mat-label>
+              <input matInput type="date" id="birthday" required>
+            </mat-form-field>
+          </div>
+          <div class="mb-3 col-6">
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Groupe Sanguin</mat-label>
+              <mat-select id="bloodType" required>
+                <mat-option disabled selected>Choisissez...</mat-option>
+                <mat-option value="A+">A+</mat-option>
+                <mat-option value="A-">A-</mat-option>
+                <mat-option value="B+">B+</mat-option>
+                <mat-option value="B-">B-</mat-option>
+                <mat-option value="AB+">AB+</mat-option>
+                <mat-option value="AB-">AB-</mat-option>
+                <mat-option value="O+">O+</mat-option>
+                <mat-option value="O-">O-</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+          <div class="mb-3 col-6">
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Sexe</mat-label>
+              <mat-select id="sexe" placeholder="Choisissez..." required>
+                <mat-option value="" disabled selected>Choisissez...</mat-option>
+                <mat-option value="male">Masculin</mat-option>
+                <mat-option value="female">Féminin</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="mb-3 col-6">
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Organisation</mat-label>
+              <input matInput type="text" id="organisation" placeholder="Nom de l'organisation" required>
+            </mat-form-field>
+          </div>
+          <div class="mb-3 col-6">
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Rôle dans l'Organisation</mat-label>
+              <mat-select id="role" required>
+                <mat-option disabled selected>Choisissez votre rôle...</mat-option>
+                <mat-option value="leader">Leader</mat-option>
+                <mat-option value="volunteer">Volontaire</mat-option>
+                <mat-option value="member">Membre</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+          <div class="mb-3 col-6">
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Mission Scout</mat-label>
+              <input matInput type="text" id="scoutMission" placeholder="Votre mission" required>
+            </mat-form-field>
+          </div>
+          <div class="mb-3 col-6">
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Diplôme Scout</mat-label>
+              <input matInput type="text" id="scoutGrad" placeholder="Votre diplôme scout" required>
+            </mat-form-field>
+          </div>
+          <div class="mb-3 col-6">
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Diplôme Scolaire</mat-label>
+              <input matInput type="text" id="schoolDgr" placeholder="Votre diplôme scolaire" required>
+            </mat-form-field>
+          </div>
+          <div class="mb-3 col-6">
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Sauvetage</mat-label>
+              <mat-select id="saveFromHarm" required>
+                <mat-option disabled selected>Choisissez...</mat-option>
+                <mat-option value="yes">Oui</mat-option>
+                <mat-option value="no">Non</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="mb-3 col-6">
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Profession</mat-label>
+              <input matInput type="text" id="profession" placeholder="Votre profession" required>
+            </mat-form-field>
+          </div>
+          <div class="mb-3 col-6">
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Statut Familial</mat-label>
+              <input matInput type="text" id="statusFamilial" placeholder="Votre statut familial" required>
+            </mat-form-field>
+          </div>
+          <div class="mb-3 col-12">
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Adresse</mat-label>
+              <textarea matInput id="address" rows="2" placeholder="Votre adresse complète" required></textarea>
+            </mat-form-field>
+          </div>
+          <div class="text-center mt-3">
+            <button mat-raised-button color="primary" class="w-50 rounded-2 fs-5 mat-elevation-z5 py-4 p-2 bg-danger btn btn-lg text-white">Soumettre</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+<app-footer></app-footer>
