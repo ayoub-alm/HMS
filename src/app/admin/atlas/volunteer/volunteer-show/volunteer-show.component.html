@@ -1,0 +1,54 @@
+<div class="container-fluid px-5 bg-white vh-100 overflow-y-scroll rounded-top-5 py-2">
+<!--  <div class="card mat-elevation-z4 w- ">-->
+    <!-- En-tête de la carte -->
+      <div class="d-flex justify-content-start align-items-center">
+        <button mat-button class="text-secondary"><mat-icon>house</mat-icon>Home</button>
+        <span class="fw-bolder text-secondary">/</span>
+        <button mat-button><mat-icon>person</mat-icon>Voluntaire</button>
+      </div>
+    <!-- Corps de la carte -->
+    <div class="card-body row d-flex justify-content-between ">
+      <!-- Informations personnelles -->
+      <mat-card class="volunteer.getValue() col-lg-6  bg-white rounded-0">
+        <h3 mat-card-title class="brown-color"><mat-icon>info</mat-icon> Informations personnelles</h3>
+        <p><mat-icon>person</mat-icon> <strong>Nom complete :</strong> {{ volunteer.getValue().name }} {{ volunteer.getValue().lastName }}</p>
+        <p><mat-icon>badge</mat-icon> <strong>CIN :</strong> {{ volunteer.getValue().cin }} </p>
+        <p><mat-icon>cake</mat-icon> <strong>Date de naissance :</strong> {{ volunteer.getValue().birthday }}</p>
+        <p><mat-icon>email</mat-icon> <strong>Email :</strong> {{ volunteer.getValue().email }}</p>
+        <p><mat-icon>call</mat-icon> <strong>Téléphone :</strong> {{ volunteer.getValue().phone }}</p>
+        <p><mat-icon>home</mat-icon> <strong>Adresse :</strong> {{ volunteer.getValue().address }}</p>
+        <p><mat-icon>wc</mat-icon> <strong>Sexe :</strong> {{ volunteer.getValue().sexId }}</p>
+        <p><mat-icon>bloodtype</mat-icon> <strong>Groupe sanguin :</strong> {{ volunteer.getValue().blood }}</p>
+      </mat-card>
+      <mat-card class="volunteer.getValue() col-lg-6 bg-white rounded-0">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d101113.30399674796!2d-7.669393906664817!3d33.572260199141326!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda7d284a5a0e849%3A0xb2dffc40c39b06c7!2sUnited%20Nations%20Square!5e1!3m2!1sen!2sma!4v1738106906809!5m2!1sen!2sma" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </mat-card>
+
+      <!-- Informations sur le scoutisme -->
+      <mat-card class="volunteer.getValue() col-lg-6  bg-white rounded-0">
+      <h3 class="brown-color"><mat-icon>group</mat-icon> Informations sur le scoutisme</h3>
+      <p><mat-icon>assignment_ind</mat-icon> <strong>Rôle :</strong> {{ volunteer.getValue().roleId }}</p>
+      <p><mat-icon>grade</mat-icon> <strong>Grade scout :</strong> {{ volunteer.getValue().scoutGradId }}</p>
+      <p><mat-icon>flag</mat-icon> <strong>Mission scout :</strong> {{ volunteer.getValue().scoutMissionId }}</p>
+      <p><mat-icon>security</mat-icon> <strong>Formation "Save From Harm" :</strong> {{ volunteer.getValue().saveFromHarm }}</p>
+      </mat-card>
+
+
+      <mat-card class="volunteer.getValue() col-lg-6 bg-white rounded-0">
+        <!-- Informations complémentaires -->
+        <h3 mat-card-title class="brown-color" ><mat-icon>favorite</mat-icon> Informations complémentaires</h3>
+        <p><mat-icon>health_and_safety</mat-icon> <strong>État de santé :</strong> {{ volunteer.getValue().healthStatus }}</p>
+        <p><mat-icon>school</mat-icon> <strong>Niveau d’études :</strong> {{ volunteer.getValue().schoolDegree }}</p>
+        <p><mat-icon>business</mat-icon> <strong>Organisation :</strong> {{ volunteer.getValue().organisation }}</p>
+        <p><mat-icon>work</mat-icon> <strong>Profession :</strong> {{ volunteer.getValue().profession }}</p>
+        <p><mat-icon>date_range</mat-icon> <strong>Date d’inscription :</strong> {{ volunteer.getValue().inscriptionDate }}</p>
+        <p><mat-icon>family_restroom</mat-icon> <strong>Statut familial :</strong> {{ volunteer.getValue().familyStatus }}</p>
+        <p><mat-icon>location_city</mat-icon> <strong>Ville :</strong> {{ volunteer.getValue().cityId }}</p>
+        <p><mat-icon>public</mat-icon> <strong>Région :</strong> {{ volunteer.getValue().regionId }}</p>
+      </mat-card>
+
+
+  </div>
+
+<!--</div>-->
+</div>

@@ -4,20 +4,87 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .brown-color{
-  color:#ba9354 !important;
+  color:rgba(0, 148, 180) !important;
 }
 .green-color{
-  color:#388b77 !important;
+  color:  rgba(98, 37, 153)!important;
 }
 
 .bg-brown-color{
-  background:#ba9354!important;
+  background: rgba(0, 148, 180) !important;
 }
 .bg-green-color{
-  background:#388b77!important;
+  background: rgba(98, 37, 153) !important;
 }
 
 
 .yellow-color{
   color:#ecde41 !important
 }
+
+
+
+
+.custom-table th.mat-header-cell, .custom-table td.mat-cell {
+  height: 15px; /* Set your desired height */
+  line-height: 2px; /* Center text vertically */
+  padding: 0px; /* Adjust padding if needed */
+}
+
+.table-container {
+  max-height:80vh; /* Set a max height for the table container */
+  overflow: auto;
+  max-width: 100%;
+  /* Enable vertical scrolling */
+}
+
+
+
+/* Custom scrollbar styling for horizontal scrollbar */
+*::-webkit-scrollbar {
+  height: 4px;
+  width: 4px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: white ; /* Color of the scrollbar thumb */
+  border-radius: 4px;
+  box-shadow:1px 1px 20px black;/* Round corners of the scrollbar */
+}
+
+*::-webkit-scrollbar-track {
+  background: rgba(98, 37, 153) ; /* Background of the scrollbar track */
+}
+
+
+.bg-dark-ma{
+  background-color:  #8e8e8e!important;
+}
+
+.bg-dark-light-ma{
+  background: #F8F9FA!important;
+}
+
+:host ::ng-deep .period-container .period-inner-container {
+  color: #fff;
+  border-radius: 20px;
+  background: black !important;
+  width: max-content;
+  padding: 0.2rem 0.5rem;
+  z-index: 10;
+}
+
+
+.full-height-size{
+  min-height:max(100vh);
+}
+
+.scale-09{
+  transform:scale(0.9);
+}
+
+.scale-08{
+  transform:scale(0.8);
+}
+
+

@@ -1,4 +1,4 @@
-export class VolunteerCreateDto {
+export class VolunteerResponseDto {
   name: string;
   lastName: string;
   birthday: string;  // You can use Date if you prefer

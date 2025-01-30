@@ -169,3 +169,10 @@ body {
     height: 80px;
     width: 100%;
 }
+
+
+.header-carousel{
+  height:80vh;background-size: cover;
+  box-shadow:inset 10rem 10rem 10rem 120px rgba(0, 0, 0, 0.65);
+
+}

@@ -1,11 +1,10 @@
-<div class="container-fluid bg-white" style="background: url('/feuture1.jpg');background-size: cover;">
+<div class="container-fluid " style="background:rgba(98, 37, 153,0.8);background-size: cover;">
 <div class="row d-flex justify-content-center">
     <div class="vh-100 col-12 d-flex justify-content-center p-lg-5  p-sm-3" data-aos="fade-up" >
-      <form [formGroup]="loginForm" class="col-lg-6 shadow-lg rounded-5 border p-3 p-lg-5 my-auto bg-light text-center " style="--bs-bg-opacity: .8;" >
+      <form [formGroup]="loginForm" class="col-lg-6 mat-elevation-z4 rounded-5 border p-3 p-lg-5 my-auto bg-white text-center "  >
           <!-- <img class="mb-4" src="/assets/ma_logo.png" alt="" width="100%" height="100%"> -->
-          <p class="display-1 bolder text-body-secondary text-center ">
-            <span class="bg-primary-subtle">F</span><span class="bg-secondary-subtle">NM</span> <span
-              class=" bg-danger-subtle">S</span>
+          <p class="display-4 bolder text-center " style="color:rgba(98, 37, 153);">
+          Atals Scout Alert
           </p>
           <p class="h4 mb-3 fw-normal text-center">Veuillez vous connecter</p>
 
@@ -30,11 +29,11 @@
 
           <!-- <button mat-raised-button>Basic</button> -->
 
-          <button mat-raised-button class=" text-dark w-75 mt-2 shadow-sm  border-1 border fs-5"
+          <button  class=" text-white w-75 mt-2 shadow-sm rounded-2 p-3 display-2 border-1 border fs-5 bg-green-color"
                   (click)="login()"
                   [disabled]="!loginForm.valid"
                   type="button">Se connecter</button>
-          <p class="fs-6 border-butoom text-dark text-center mt-5 ">L'innovation au service de la logistique</p>
+          <p class="fs-6 border-butoom text-dark text-center mt-5 "> Fédération Marocaine des Scouts</p>
           <a mat-stroked-button (click)="navigateToHomePage()" class="text-dark shadow-sm rounded-3">
             <mat-icon style="transform: scale(1.3);">home</mat-icon> Page d'accueil
           </a>

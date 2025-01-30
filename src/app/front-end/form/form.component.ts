@@ -7,6 +7,11 @@ import { MatSelect } from "@angular/material/select";
 import { FooterComponent } from '../footer/footer.component';
 import { NavBarComponent } from '../nav-bar/nav-bar.component';
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
+import {VolunteerCreateDto} from '../../dtos/request/volunteer.create.dto';
+import {VolunteerService} from '../../services/volunteer.service';
+import {catchError, of, tap} from 'rxjs';
+import {MatSnackBar} from '@angular/material/snack-bar';
+import {HttpClientModule} from '@angular/common/http';
 
 @Component({
   selector: 'app-form',
@@ -23,12 +28,11 @@ import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/
     ReactiveFormsModule
   ],
   templateUrl: './form.component.html',
-  styleUrls: ['./form.component.css']
+  styleUrls: ['./form.component.css'],
 })
 export class FormComponent implements OnInit {
   form!: FormGroup;
-
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private volunteerService: VolunteerService, private snackBar: MatSnackBar) { }
 
   ngOnInit() {
     this.form = this.fb.group({
@@ -57,9 +61,19 @@ export class FormComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log("Form Data:", this.form.value);
-    if (this.form.valid) {
+      console.log(this.form.value)
+    // if (this.form.valid) {
+      const volunteer: VolunteerCreateDto = new VolunteerCreateDto(this.form.value);
+      this.volunteerService.createVolunteer(volunteer).pipe(
+        tap((volunteer)=> {
+          this.snackBar.open(`welcome to volunteers planet  ${volunteer.name +' '+ volunteer.lastName}` ,"OK", {duration:3000});
+        }),
+        catchError((err) => {
+          this.snackBar.open("error during create e new volunteer ", "OK", {duration:3000});
+          return of(null)
+        })
+      ).subscribe()
       console.log("Form Data:", this.form.value);
     }
-  }
+  // }
 }

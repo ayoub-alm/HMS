@@ -8,7 +8,8 @@ import { DeliveriesComponent } from './deliveries/deliveries.component';
 const routes: Routes = [
   {path:'', component: IndexComponent, children:[
     {path:'all', component:PatientAllComponent},
-    {path:'deliveries', component:DeliveriesComponent}
+    {path:'deliveries', component:DeliveriesComponent},
+      {path:'volunteers', loadChildren:()=>import('./atlas/volunteer/volunteer.module').then(m => m.VolunteerModule)}
   ]}
 ];
 
