@@ -10,7 +10,7 @@
     <div class="card-body row d-flex justify-content-between ">
       <!-- Informations personnelles -->
       <mat-card class="volunteer.getValue() col-lg-6  bg-white rounded-0">
-        <h3 mat-card-title class="brown-color"><mat-icon>info</mat-icon> Informations personnelles</h3>
+        <h3 mat-card-title class="secondary-color"><mat-icon>info</mat-icon> Informations personnelles</h3>
         <p><mat-icon>person</mat-icon> <strong>Nom complete :</strong> {{ volunteer.getValue().name }} {{ volunteer.getValue().lastName }}</p>
         <p><mat-icon>badge</mat-icon> <strong>CIN :</strong> {{ volunteer.getValue().cin }} </p>
         <p><mat-icon>cake</mat-icon> <strong>Date de naissance :</strong> {{ volunteer.getValue().birthday }}</p>
@@ -26,7 +26,7 @@
 
       <!-- Informations sur le scoutisme -->
       <mat-card class="volunteer.getValue() col-lg-6  bg-white rounded-0">
-      <h3 class="brown-color"><mat-icon>group</mat-icon> Informations sur le scoutisme</h3>
+      <h3 class="secondary-color"><mat-icon>group</mat-icon> Informations sur le scoutisme</h3>
       <p><mat-icon>assignment_ind</mat-icon> <strong>Rôle :</strong> {{ volunteer.getValue().roleId }}</p>
       <p><mat-icon>grade</mat-icon> <strong>Grade scout :</strong> {{ volunteer.getValue().scoutGradId }}</p>
       <p><mat-icon>flag</mat-icon> <strong>Mission scout :</strong> {{ volunteer.getValue().scoutMissionId }}</p>
@@ -36,7 +36,7 @@
 
       <mat-card class="volunteer.getValue() col-lg-6 bg-white rounded-0">
         <!-- Informations complémentaires -->
-        <h3 mat-card-title class="brown-color" ><mat-icon>favorite</mat-icon> Informations complémentaires</h3>
+        <h3 mat-card-title class="secondary-color" ><mat-icon>favorite</mat-icon> Informations complémentaires</h3>
         <p><mat-icon>health_and_safety</mat-icon> <strong>État de santé :</strong> {{ volunteer.getValue().healthStatus }}</p>
         <p><mat-icon>school</mat-icon> <strong>Niveau d’études :</strong> {{ volunteer.getValue().schoolDegree }}</p>
         <p><mat-icon>business</mat-icon> <strong>Organisation :</strong> {{ volunteer.getValue().organisation }}</p>

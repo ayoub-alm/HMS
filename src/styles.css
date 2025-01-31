@@ -1,29 +1,47 @@
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; }
+*{
+  font-family: cursive!important;
+}
 
-.brown-color{
+mat-icon {
+  font-family: "Material Icons", sans-serif !important;
+}
+.secondary-color{
   color:rgba(0, 148, 180) !important;
 }
-.green-color{
+.primary-color{
   color:  rgba(98, 37, 153)!important;
 }
 
-.bg-brown-color{
+.bg-secondary-color{
   background: rgba(0, 148, 180) !important;
 }
-.bg-green-color{
+.bg-primary-color{
   background: rgba(98, 37, 153) !important;
 }
 
 
+.green-color{
+  color: rgba(159, 237, 143) !important;
+}
+
+.bg-green-color{
+  background: rgba(159, 237, 143) !important;
+}
 .yellow-color{
   color:#ecde41 !important
 }
 
+.orange-color{
+color:rgba(255, 174, 128)!important;
+}
 
-
+.bg-orange-color{
+  background:rgba(255, 174, 128)!important;
+}
 
 .custom-table th.mat-header-cell, .custom-table td.mat-cell {
   height: 15px; /* Set your desired height */

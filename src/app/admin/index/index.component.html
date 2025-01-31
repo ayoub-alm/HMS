@@ -1,5 +1,5 @@
 <mat-drawer-container class="example-container">
-  <mat-drawer #drawer class="example-sidenav custom-drawer-width bg-green-color " mode="side" opened="true" position="start">
+  <mat-drawer #drawer class="example-sidenav custom-drawer-width bg-primary-color " mode="side" opened="true" position="start">
     <div class="container-fluid side-nav ">
       <mat-list class="mt-2">
         <p class="text-center">
@@ -68,7 +68,7 @@
   </mat-drawer>
 
   <div class="example-sidenav-conten">
-    <mat-toolbar class="sticky-top bg-green-color">
+    <mat-toolbar class="sticky-top bg-primary-color">
       <button mat-icon-button (click)="drawer.toggle()" class="example-icon text-white" aria-label="Toggle sidenav">
         <mat-icon>menu</mat-icon>
       </button>
@@ -86,7 +86,7 @@
     </mat-toolbar>
 
     <!-- Router outlet for dynamic views -->
-     <div class="bg-green-color p-2 ">
+     <div class="bg-primary-color p-2 ">
        <router-outlet ></router-outlet>
      </div>
   </div>
