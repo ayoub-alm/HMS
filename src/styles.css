@@ -3,7 +3,7 @@
 html, body { height: 100%; }
 body { margin: 0; }
 *{
-  font-family: cursive!important;
+  font-family: "Gill Sans", sans-serif;
 }
 
 mat-icon {
