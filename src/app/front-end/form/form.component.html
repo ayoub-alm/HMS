@@ -1,159 +1,321 @@
 <app-nav-bar></app-nav-bar>
 
-<section id="inscription" class="py-5">
+<section id="inscription" class="py-5" style="direction: rtl; text-align: right;">
   <div class="container">
-    <h2 class="display-4 text-center fw-bold primary-color mb-4">Inscrivez-Vous</h2>
+    <h2 class="display-4 text-center fw-bold primary-color mb-4">التسجيل</h2>
     <p class="text-muted text-center mb-4">
-      Remplissez le formulaire ci-dessous pour rejoindre notre mouvement et faire une différence.
+      يرجى ملء النموذج أدناه للانضمام إلى حركتنا والمساهمة في إحداث فرق.
     </p>
+
     <div class="row">
       <div class="col-md-12 mx-auto bg-light mat-elevation-z2 p-5 rounded-3 shadow-sm">
-        <form [formGroup]="form"  class="row">
-          <div class="mb-3 col-lg-4 col-12">
-            <mat-form-field appearance="outline" class="w-100">
-              <mat-label>Prénom</mat-label>
-              <input matInput formControlName="name" placeholder="Votre prénom" required>
-            </mat-form-field>
-          </div>
 
-          <div class="mb-3 col-lg-4 col-12">
-            <mat-form-field appearance="outline" class="w-100">
-              <mat-label>Nom</mat-label>
-              <input matInput formControlName="lastName" placeholder="Votre nom" required>
-            </mat-form-field>
-          </div>
+        <mat-horizontal-stepper #stepper labelPosition="bottom">
 
-          <div class="mb-3 col-lg-4 col-12">
-            <mat-form-field appearance="outline" class="w-100">
-              <mat-label>CIN</mat-label>
-              <input matInput formControlName="cin" placeholder="Votre numéro CIN" required>
-            </mat-form-field>
-          </div>
+          <!-- ✅ الخطوة 1: المعلومات الشخصية -->
+          <!-- ✅ الخطوة 1: المعلومات الشخصية -->
+          <mat-step [stepControl]="personalForm">
+            <form [formGroup]="personalForm">
+              <ng-template matStepLabel>المعلومات الشخصية</ng-template>
 
-          <div class="mb-3 col-lg-4 col-12">
-            <mat-form-field appearance="outline" class="w-100">
-              <mat-label>Email</mat-label>
-              <input matInput type="email" formControlName="email" placeholder="Votre adresse email" required>
-            </mat-form-field>
-          </div>
+              <div class="row">
+                <!-- الاسم الأول -->
+                <div class="mb-3 col-lg-6">
+                  <mat-form-field appearance="fill" class="w-100">
+                    <mat-label>الاسم الأول</mat-label>
+                    <input matInput formControlName="name" placeholder="أدخل اسمك" required>
+                  </mat-form-field>
+                </div>
 
-          <div class="mb-3 col-lg-4 col-12">
-            <mat-form-field appearance="outline" class="w-100">
-              <mat-label>Téléphone</mat-label>
-              <input matInput type="tel" formControlName="phone" placeholder="Votre numéro de téléphone" required>
-            </mat-form-field>
-          </div>
+                <!-- اللقب -->
+                <div class="mb-3 col-lg-6">
+                  <mat-form-field appearance="fill" class="w-100">
+                    <mat-label>اللقب</mat-label>
+                    <input matInput formControlName="lastName" placeholder="أدخل لقبك" required>
+                  </mat-form-field>
+                </div>
 
-          <div class="mb-3 col-lg-4 col-12">
-            <mat-form-field appearance="outline" class="w-100">
-              <mat-label>Date de Naissance</mat-label>
-              <input matInput type="date" formControlName="birthday" required>
-            </mat-form-field>
-          </div>
+                <!-- رقم CIN -->
+                <div class="mb-3 col-lg-6">
+                  <mat-form-field appearance="fill" class="w-100">
+                    <mat-label>رقم CIN</mat-label>
+                    <input matInput formControlName="cin" placeholder="أدخل رقم CIN الخاص بك" required>
+                  </mat-form-field>
+                </div>
 
-          <div class="mb-3 col-lg-4 col-12">
-            <mat-form-field appearance="outline" class="w-100">
-              <mat-label>Groupe Sanguin</mat-label>
-              <mat-select formControlName="blood" required>
-                <mat-option value="A+">A+</mat-option>
-                <mat-option value="A-">A-</mat-option>
-                <mat-option value="B+">B+</mat-option>
-                <mat-option value="B-">B-</mat-option>
-                <mat-option value="AB+">AB+</mat-option>
-                <mat-option value="AB-">AB-</mat-option>
-                <mat-option value="O+">O+</mat-option>
-                <mat-option value="O-">O-</mat-option>
-              </mat-select>
-            </mat-form-field>
-          </div>
+                <!-- البريد الإلكتروني -->
+                <div class="mb-3 col-lg-6">
+                  <mat-form-field appearance="fill" class="w-100">
+                    <mat-label>البريد الإلكتروني</mat-label>
+                    <input matInput type="email" formControlName="email" placeholder="أدخل بريدك الإلكتروني" required>
+                  </mat-form-field>
+                </div>
 
-          <div class="mb-3 col-lg-4 col-12">
-            <mat-form-field appearance="outline" class="w-100">
-              <mat-label>Sexe</mat-label>
-              <mat-select formControlName="sexId" required>
-                <mat-option value="male">Masculin</mat-option>
-                <mat-option value="female">Féminin</mat-option>
-              </mat-select>
-            </mat-form-field>
-          </div>
+                <!-- العنوان -->
+                <div class="mb-3 col-lg-6">
+                  <mat-form-field appearance="fill" class="w-100">
+                    <mat-label>العنوان</mat-label>
+                    <textarea matInput formControlName="address" rows="2" placeholder="أدخل عنوانك الكامل" required></textarea>
+                  </mat-form-field>
+                </div>
 
-          <div class="mb-3 col-lg-4 col-12">
-            <mat-form-field appearance="outline" class="w-100">
-              <mat-label>Organisation</mat-label>
-              <input matInput formControlName="organisation" placeholder="Nom de l'organisation" required>
-            </mat-form-field>
-          </div>
+                <!-- الجنس -->
+                <div class="mb-3 col-lg-6">
+                  <mat-form-field appearance="fill" class="w-100">
+                    <mat-label>الجنس</mat-label>
+                    <mat-select formControlName="sexId" required>
+                      <mat-option value="male">ذكر</mat-option>
+                      <mat-option value="female">أنثى</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+              </div>
 
-          <div class="mb-3 col-lg-4 col-12">
-            <mat-form-field appearance="outline" class="w-100">
-              <mat-label>Rôle dans l'Organisation</mat-label>
-              <mat-select formControlName="roleId" required>
-                <mat-option value="leader">Leader</mat-option>
-                <mat-option value="volunteer">Volontaire</mat-option>
-                <mat-option value="member">Membre</mat-option>
-              </mat-select>
-            </mat-form-field>
-          </div>
+              <div class="text-end">
+                <button mat-button matStepperNext>التالي</button>
+              </div>
+            </form>
+          </mat-step>
 
-          <div class="mb-3 col-lg-4 col-12">
-            <mat-form-field appearance="outline" class="w-100">
-              <mat-label>Mission Scout</mat-label>
-              <input matInput formControlName="scoutMissionId" placeholder="Votre mission" required>
-            </mat-form-field>
-          </div>
 
-          <div class="mb-3 col-lg-4 col-12">
-            <mat-form-field appearance="outline" class="w-100">
-              <mat-label>Diplôme Scout</mat-label>
-              <input matInput formControlName="scoutGradId" placeholder="Votre diplôme scout" required>
-            </mat-form-field>
-          </div>
+          <!-- ✅ الخطوة 2: المعلومات الطبية -->
+          <!-- ✅ الخطوة 2: المعلومات الطبية -->
+          <mat-step [stepControl]="medicalForm">
+            <form [formGroup]="medicalForm">
+              <ng-template matStepLabel>المعلومات الطبية</ng-template>
 
-          <div class="mb-3 col-lg-4 col-12">
-            <mat-form-field appearance="outline" class="w-100">
-              <mat-label>Diplôme Scolaire</mat-label>
-              <input matInput formControlName="schoolDegree" placeholder="Votre diplôme scolaire" required>
-            </mat-form-field>
-          </div>
+              <div class="row">
+                <!-- رقم الهاتف -->
+                <div class="mb-3 col-lg-6">
+                  <mat-form-field appearance="fill" class="w-100">
+                    <mat-label>رقم الهاتف</mat-label>
+                    <input matInput type="tel" formControlName="phone" placeholder="أدخل رقم هاتفك" required>
+                  </mat-form-field>
+                </div>
 
-          <div class="mb-3 col-lg-4 col-12">
-            <mat-form-field appearance="outline" class="w-100">
-              <mat-label>Sauvetage</mat-label>
-              <mat-select formControlName="saveFromHarm" required>
-                <mat-option value="yes">Oui</mat-option>
-                <mat-option value="no">Non</mat-option>
-              </mat-select>
-            </mat-form-field>
-          </div>
+                <!-- تاريخ الميلاد -->
+                <div class="mb-3 col-lg-6">
+                  <mat-form-field appearance="fill" class="w-100">
+                    <mat-label>تاريخ الميلاد</mat-label>
+                    <input matInput type="date" formControlName="birthday" required>
+                  </mat-form-field>
+                </div>
 
-          <div class="mb-3 col-lg-4 col-12">
-            <mat-form-field appearance="outline" class="w-100">
-              <mat-label>Profession</mat-label>
-              <input matInput formControlName="profession" placeholder="Votre profession" required>
-            </mat-form-field>
-          </div>
+                <!-- فصيلة الدم -->
+                <div class="mb-3 col-lg-6">
+                  <mat-form-field appearance="fill" class="w-100">
+                    <mat-label>فصيلة الدم</mat-label>
+                    <mat-select formControlName="blood" required>
+                      <mat-option value="A+">A+</mat-option>
+                      <mat-option value="A-">A-</mat-option>
+                      <mat-option value="B+">B+</mat-option>
+                      <mat-option value="B-">B-</mat-option>
+                      <mat-option value="AB+">AB+</mat-option>
+                      <mat-option value="AB-">AB-</mat-option>
+                      <mat-option value="O+">O+</mat-option>
+                      <mat-option value="O-">O-</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
 
-          <div class="mb-3 col-lg-4 col-12">
-            <mat-form-field appearance="outline" class="w-100">
-              <mat-label>Statut Familial</mat-label>
-              <input matInput formControlName="familyStatus" placeholder="Votre statut familial" required>
-            </mat-form-field>
-          </div>
+                <!-- الحالة الصحية -->
+                <div class="mb-3 col-lg-6">
+                  <mat-form-field appearance="fill" class="w-100">
+                    <mat-label>الحالة الصحية</mat-label>
+                    <input matInput formControlName="healthStatus" placeholder="أدخل حالتك الصحية" required>
+                  </mat-form-field>
+                </div>
 
-          <div class="mb-3 col-12">
-            <mat-form-field appearance="outline" class="w-100">
-              <mat-label>Adresse</mat-label>
-              <textarea matInput formControlName="address" rows="2" placeholder="Votre adresse complète" required></textarea>
-            </mat-form-field>
-          </div>
+                <!-- التدريب على الإنقاذ -->
+                <div class="mb-3 col-lg-6">
+                  <mat-form-field appearance="fill" class="w-100">
+                    <mat-label>هل لديك تدريب على الإنقاذ؟</mat-label>
+                    <mat-select formControlName="saveFromHarm" required>
+                      <mat-option value="yes">نعم</mat-option>
+                      <mat-option value="no">لا</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+              </div>
 
-          <div class="text-center mt-3">
-            <button (click)="onSubmit()"
-              mat-raised-button color="primary"
-                    class="w-50 rounded-2 fs-5 mat-elevation-z5 py-4 p-2 bg-primary-color btn btn-lg text-white"
-                    >Soumettre</button>
-          </div>
-        </form>
+              <div class="text-end">
+                <button mat-button matStepperPrevious>السابق</button>
+                <button mat-button matStepperNext>التالي</button>
+              </div>
+            </form>
+          </mat-step>
+
+
+          <!-- ✅ الخطوة 3: المعلومات المهنية -->
+          <mat-step [stepControl]="professionalForm">
+            <form [formGroup]="professionalForm">
+              <ng-template matStepLabel>المعلومات المهنية</ng-template>
+
+              <div class="row">
+                <!-- المهنة -->
+                <div class="mb-3 col-lg-6">
+                  <mat-form-field appearance="fill" class="w-100">
+                    <mat-label>المهنة</mat-label>
+                    <input matInput formControlName="profession" placeholder="أدخل مهنتك" required>
+                  </mat-form-field>
+                </div>
+
+                <!-- الحالة العائلية -->
+                <div class="mb-3 col-lg-6">
+                  <mat-form-field appearance="fill" class="w-100">
+                    <mat-label>الحالة العائلية</mat-label>
+                    <input matInput formControlName="familyStatus" placeholder="أدخل حالتك العائلية" required>
+                  </mat-form-field>
+                </div>
+
+                <!-- الشهادة الدراسية -->
+                <div class="mb-3 col-lg-6">
+                  <mat-form-field appearance="fill" class="w-100">
+                    <mat-label>الشهادة الدراسية</mat-label>
+                    <input matInput formControlName="schoolDegree" placeholder="أدخل شهادتك الدراسية" required>
+                  </mat-form-field>
+                </div>
+              </div>
+
+              <div class="text-end">
+                <button mat-button matStepperPrevious>السابق</button>
+                <button mat-button matStepperNext>التالي</button>
+              </div>
+            </form>
+          </mat-step>
+
+
+          <!-- ✅ الخطوة 4: معلومات الكشافة -->
+          <mat-step [stepControl]="scoutForm">
+            <form [formGroup]="scoutForm">
+              <ng-template matStepLabel>معلومات الكشافة</ng-template>
+
+              <div class="row">
+                <!-- المنظمة -->
+                <div class="mb-3 col-lg-6">
+                  <mat-form-field appearance="fill" class="w-100">
+                    <mat-label>المنظمة</mat-label>
+                    <input matInput formControlName="organisation" placeholder="أدخل اسم المنظمة" required>
+                  </mat-form-field>
+                </div>
+
+                <!-- الدور في المنظمة -->
+                <div class="mb-3 col-lg-6">
+                  <mat-form-field appearance="fill" class="w-100">
+                    <mat-label>دورك في المنظمة</mat-label>
+                    <mat-select formControlName="roleId" required>
+                      <mat-option value="leader">قائد</mat-option>
+                      <mat-option value="volunteer">متطوع</mat-option>
+                      <mat-option value="member">عضو</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+
+                <!-- الرتبة الكشفية -->
+                <div class="mb-3 col-lg-6">
+                  <mat-form-field appearance="fill" class="w-100">
+                    <mat-label>الرتبة الكشفية</mat-label>
+                    <input matInput formControlName="scoutGradId" placeholder="أدخل رتبتك الكشفية" required>
+                  </mat-form-field>
+                </div>
+
+                <!-- المهمة الكشفية -->
+                <div class="mb-3 col-lg-6">
+                  <mat-form-field appearance="fill" class="w-100">
+                    <mat-label>المهمة الكشفية</mat-label>
+                    <input matInput formControlName="scoutMissionId" placeholder="أدخل مهمتك الكشفية" required>
+                  </mat-form-field>
+                </div>
+
+                <!-- تاريخ التسجيل -->
+                <div class="mb-3 col-lg-6">
+                  <mat-form-field appearance="fill" class="w-100">
+                    <mat-label>تاريخ التسجيل</mat-label>
+                    <input matInput type="date" formControlName="inscriptionDate" required>
+                  </mat-form-field>
+                </div>
+
+                <!-- المدينة -->
+                <div class="mb-3 col-lg-6">
+                  <mat-form-field appearance="fill" class="w-100">
+                    <mat-label>المدينة</mat-label>
+                    <input matInput formControlName="cityId" placeholder="أدخل اسم مدينتك" required>
+                  </mat-form-field>
+                </div>
+
+                <!-- المنطقة -->
+                <div class="mb-3 col-lg-6">
+                  <mat-form-field appearance="fill" class="w-100">
+                    <mat-label>المنطقة</mat-label>
+                    <input matInput formControlName="regionId" placeholder="أدخل منطقتك" required>
+                  </mat-form-field>
+                </div>
+              </div>
+
+              <div class="text-end">
+                <button mat-button matStepperPrevious>السابق</button>
+                <button mat-button matStepperNext>التالي</button>
+              </div>
+            </form>
+          </mat-step>
+
+          <!-- ✅ الخطوة 5: التأكيد -->
+          <mat-step>
+            <ng-template matStepLabel>التأكيد</ng-template>
+            <p class="lead text-center">يرجى التحقق من المعلومات قبل الإرسال.</p>
+
+            <div class="row bg-white p-4 rounded-3 shadow-sm">
+
+              <h5 class="fw-bold primary-color mb-3">تفاصيل التسجيل:</h5>
+
+              <!-- ✅ الخطوة 1: المعلومات الشخصية -->
+              <div class="row">
+                <div class="col-md-6 mb-3"><strong>الاسم الأول:</strong> {{ personalForm.value.name }}</div>
+                <div class="col-md-6 mb-3"><strong>اللقب:</strong> {{ personalForm.value?.lastName }}</div>
+                <div class="col-md-6 mb-3"><strong>رقم CIN:</strong> {{ personalForm.value?.cin }}</div>
+                <div class="col-md-6 mb-3"><strong>البريد الإلكتروني:</strong> {{ personalForm.value?.email }}</div>
+                <div class="col-md-6 mb-3"><strong>العنوان:</strong> {{ personalForm.value.address }}</div>
+              </div>
+
+              <!-- ✅ الخطوة 2: المعلومات الطبية -->
+              <h5 class="fw-bold primary-color my-3">المعلومات الطبية:</h5>
+              <div class="row">
+                <div class="col-md-6 mb-3"><strong>رقم الهاتف:</strong> {{ medicalForm.value?.phone }}</div>
+                <div class="col-md-6 mb-3"><strong>تاريخ الميلاد:</strong> {{ medicalForm.value?.birthday }}</div>
+                <div class="col-md-6 mb-3"><strong>فصيلة الدم:</strong> {{ medicalForm.value?.blood }}</div>
+                <div class="col-md-6 mb-3"><strong>الحالة الصحية:</strong> {{ medicalForm.value?.healthStatus }}</div>
+              </div>
+
+              <!-- ✅ الخطوة 3: المعلومات المهنية -->
+              <h5 class="fw-bold primary-color my-3">المعلومات المهنية:</h5>
+              <div class="row">
+                <div class="col-md-6 mb-3"><strong>المهنة:</strong> {{ professionalForm.value?.profession }}</div>
+                <div class="col-md-6 mb-3"><strong>الحالة العائلية:</strong> {{ professionalForm.value?.familyStatus }}</div>
+              </div>
+
+              <!-- ✅ الخطوة 4: معلومات الكشافة -->
+              <h5 class="fw-bold primary-color my-3">معلومات الكشافة:</h5>
+              <div class="row">
+                <div class="col-md-6 mb-3"><strong>المنظمة:</strong> {{ scoutForm.value?.organisation }}</div>
+                <div class="col-md-6 mb-3"><strong>الدور في المنظمة:</strong> {{ scoutForm.value?.roleId }}</div>
+                <div class="col-md-6 mb-3"><strong>الرتبة الكشفية:</strong> {{ scoutForm.value?.scoutGradId }}</div>
+                <div class="col-md-6 mb-3"><strong>المهمة الكشفية:</strong> {{ scoutForm.value?.scoutMissionId }}</div>
+                <div class="col-md-6 mb-3"><strong>تاريخ التسجيل:</strong> {{ scoutForm.value?.inscriptionDate }}</div>
+                <div class="col-md-6 mb-3"><strong>المدينة:</strong> {{ scoutForm.value?.cityId }}</div>
+                <div class="col-md-6 mb-3"><strong>المنطقة:</strong> {{ scoutForm.value?.regionId }}</div>
+              </div>
+
+            </div>
+
+            <div class="text-center mt-3">
+              <button (click)="onSubmit()" mat-raised-button color="primary"
+                      class="w-50 rounded-2 fs-5 mat-elevation-z5 py-4 p-2 bg-primary-color btn btn-lg text-white">إرسال</button>
+            </div>
+          </mat-step>
+
+
+        </mat-horizontal-stepper>
+
       </div>
     </div>
   </div>

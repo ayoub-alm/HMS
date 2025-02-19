@@ -1,93 +1,92 @@
-<mat-drawer-container class="example-container">
-  <mat-drawer #drawer class="example-sidenav custom-drawer-width bg-primary-color " mode="side" opened="true" position="start">
-    <div class="container-fluid side-nav ">
+<mat-drawer-container class="example-container" style="direction: rtl;">
+  <mat-drawer #drawer class="example-sidenav custom-drawer-width bg-primary-color text-white" mode="side" opened="true" position="end">
+    <div class="container-fluid side-nav">
       <mat-list class="mt-2">
         <p class="text-center">
-          <img src="/logo-admin.jpg" alt="Logo Scout" width="150px" class="rounded-3 shadow-sm">
+          <img src="/logo-admin.jpg" alt="شعار الكشافة" width="150px" class="rounded-3 shadow-sm">
         </p>
         <mat-divider class="mt-4"></mat-divider>
 
+        <!-- لوحة القيادة -->
         <a [routerLink]="'/admin'">
           <mat-list-item class="d-flex justify-content-start align-items-center">
-            <button mat-button class="example-icon text-start d-flex justify-content-start text-white rounded-1" aria-label="Dashboard" style="width: 100%;">
-              Tableau de bord
+            <button mat-button class="example-icon text-end d-flex justify-content-between text-white rounded-1" aria-label="لوحة القيادة" style="width: 100%;">
+              لوحة القيادة
               <mat-icon>dashboard</mat-icon>
             </button>
           </mat-list-item>
         </a>
         <mat-divider></mat-divider>
 
-        <!-- Section Membres -->
+        <!-- إدارة الأعضاء -->
         <a [routerLink]="'/admin/volunteers'">
           <mat-list-item class="d-flex justify-content-start align-items-center">
-            <button mat-button class="example-icon text-start d-flex justify-content-start text-white rounded-1" aria-label="Membres" style="width: 100%;">
-              Gestion des Membres
+            <button mat-button class="example-icon text-end d-flex justify-content-between text-white rounded-1" aria-label="إدارة الأعضاء" style="width: 100%;">
+              إدارة الأعضاء
               <mat-icon>group</mat-icon>
             </button>
           </mat-list-item>
         </a>
         <mat-divider></mat-divider>
 
-        <!-- Section Activités -->
+        <!-- الأنشطة والمشاريع -->
         <a [routerLink]="'/admin/activities'">
           <mat-list-item class="d-flex justify-content-start align-items-center">
-            <button mat-button class="example-icon text-start d-flex justify-content-start text-white rounded-1" aria-label="Activités" style="width: 100%;">
-              Activités & Projets
+            <button mat-button class="example-icon text-end d-flex justify-content-between text-white rounded-1" aria-label="الأنشطة والمشاريع" style="width: 100%;">
+              الأنشطة والمشاريع
               <mat-icon>event</mat-icon>
             </button>
           </mat-list-item>
         </a>
         <mat-divider></mat-divider>
 
-        <!-- Section Camps -->
+        <!-- إدارة المعسكرات -->
         <a [routerLink]="'/admin/camps'">
           <mat-list-item class="d-flex justify-content-start align-items-center">
-            <button mat-button class="example-icon text-start d-flex justify-content-start text-white rounded-1" aria-label="Camps" style="width: 100%;">
-              Gestion des Camps
+            <button mat-button class="example-icon text-end d-flex justify-content-between text-white rounded-1" aria-label="إدارة المعسكرات" style="width: 100%;">
+              إدارة المعسكرات
               <mat-icon>terrain</mat-icon>
             </button>
           </mat-list-item>
         </a>
         <mat-divider></mat-divider>
 
-        <!-- Section Documents -->
+        <!-- الوثائق والموارد -->
         <a [routerLink]="'/admin/documents'">
           <mat-list-item class="d-flex justify-content-start align-items-center">
-            <button mat-button class="example-icon text-start d-flex justify-content-start text-white rounded-1" aria-label="Documents" style="width: 100%;">
-              Documents & Ressources
+            <button mat-button class="example-icon text-end d-flex justify-content-between text-white rounded-1" aria-label="الوثائق والموارد" style="width: 100%;">
+              الوثائق والموارد
               <mat-icon>folder</mat-icon>
             </button>
           </mat-list-item>
         </a>
         <mat-divider></mat-divider>
 
-
-
       </mat-list>
     </div>
   </mat-drawer>
 
   <div class="example-sidenav-conten">
-    <mat-toolbar class="sticky-top bg-primary-color">
-      <button mat-icon-button (click)="drawer.toggle()" class="example-icon text-white" aria-label="Toggle sidenav">
+    <mat-toolbar class="sticky-top bg-primary-color text-white">
+      <button mat-icon-button (click)="drawer.toggle()" class="example-icon text-white ms-3" aria-label="إظهار القائمة">
         <mat-icon>menu</mat-icon>
       </button>
-      <span class="text-white">Scout Community Manager</span>
+      <span class="text-white">مدير مجتمع الكشافة</span>
       <span class="example-spacer"></span>
-      <button mat-icon-button class="example-icon text-white" aria-label="Account">
+      <button mat-icon-button class="example-icon text-white" aria-label="الحساب الشخصي">
         <mat-icon>account_circle</mat-icon>
       </button>
-      <button mat-icon-button class="example-icon text-white" aria-label="Logout">
+      <button mat-icon-button class="example-icon text-white" aria-label="تسجيل الخروج">
         <mat-icon>logout</mat-icon>
       </button>
-      <button mat-icon-button class="example-icon text-white" aria-label="Settings">
+      <button mat-icon-button class="example-icon text-white" aria-label="الإعدادات">
         <mat-icon>settings</mat-icon>
       </button>
     </mat-toolbar>
 
     <!-- Router outlet for dynamic views -->
-     <div class="bg-primary-color p-2 ">
-       <router-outlet ></router-outlet>
-     </div>
+    <div class="bg-primary-color p-2 ">
+      <router-outlet></router-outlet>
+    </div>
   </div>
 </mat-drawer-container>

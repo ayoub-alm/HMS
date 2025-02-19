@@ -3,9 +3,29 @@
 html, body { height: 100%; }
 body { margin: 0; }
 *{
-  font-family: "Gill Sans", sans-serif;
+  font-family: "Noto Kufi Arabic", serif;
+  font-optical-sizing: auto;
+  /*font-weight: <weight>;*/
+  font-style: normal;
 }
 
+html[dir="rtl"] body {
+  direction: rtl;
+  text-align: right;
+}
+
+.text {
+  text-align: left;
+}
+
+[dir="rtl"] .text {
+  text-align: right;
+}
+
+
+html{
+  /*font-size:90% !important;*/
+}
 mat-icon {
   font-family: "Material Icons", sans-serif !important;
 }
