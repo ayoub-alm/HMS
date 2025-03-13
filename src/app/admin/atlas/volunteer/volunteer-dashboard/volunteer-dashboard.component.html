@@ -1,0 +1,113 @@
+
+
+
+<div class="container-fluid bg-white rounded-top-3 mat-elevation-z3 vh-100 overflow-y-scroll pt-2">
+  <h5 class="mb-4 secondary-color"> لوحة معلومات المتطوعين</h5>
+  <!-- Volunteer Statistics Cards -->
+  <div class="row mb-4">
+    <div class="col-md-4">
+      <div class="card p-3 text-center">
+        <h5>👥 إجمالي عدد المتطوعين</h5>
+        <h2 class="text-primary">{{ dashboardData?.totalVolunteers }}</h2>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card p-3 text-center">
+        <h5>👨 عدد المتطوعين الذكور</h5>
+        <h2 class="text-info">{{ dashboardData?.maleVolunteers }}</h2>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card p-3 text-center">
+        <h5>👩 عدد المتطوعات الإناث</h5>
+        <h2 class="text-danger">{{ dashboardData?.femaleVolunteers }}</h2>
+      </div>
+    </div>
+
+    <div class="col-md-4 mt-3">
+      <div class="card p-3 text-center">
+        <h5>✅ عدد المتطوعين النشطين</h5>
+        <h2 class="text-success">{{ dashboardData?.activeVolunteers }}</h2>
+      </div>
+    </div>
+
+    <div class="col-md-4 mt-3">
+      <div class="card p-3 text-center">
+        <h5>❌ عدد المتطوعين غير النشطين</h5>
+        <h2 class="text-warning">{{ dashboardData?.inactiveVolunteers }}</h2>
+      </div>
+    </div>
+
+    <div class="col-md-4 mt-3">
+      <div class="card p-3 text-center">
+        <h5>🎂 متوسط أعمار المتطوعين</h5>
+        <h2 class="text-secondary">{{ dashboardData?.averageAge }}</h2>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="dashboardData">
+    <div class="row">
+      <!-- Pie Chart - Gender Distribution -->
+      <div class="col-md-4">
+        <div class="card p-3">
+          <h5>📊 توزيع المتطوعين حسب الجنس</h5>
+          <canvas baseChart
+                  [data]="genderChartData"
+                  [options]="genderChartOptions"
+                  chartType="pie">
+          </canvas>
+        </div>
+      </div>
+
+      <!-- Bar Chart - Volunteers Per Region -->
+      <div class="col-md-4">
+        <div class="card p-3">
+          <h5>📍 عدد المتطوعين حسب المنطقة</h5>
+          <canvas baseChart
+                  [data]="regionChartData"
+                  [options]="regionChartOptions"
+                  chartType="bar">
+          </canvas>
+        </div>
+      </div>
+
+      <!-- Doughnut Chart - Volunteers Per City -->
+      <div class="col-md-4 mt-3">
+        <div class="card p-3">
+          <h5>🏙️ توزيع المتطوعين حسب المدينة</h5>
+          <canvas baseChart
+                  [data]="cityChartData"
+                  [options]="cityChartOptions"
+                  chartType="doughnut">
+          </canvas>
+        </div>
+      </div>
+
+      <!-- Line Chart - Blood Group Distribution -->
+      <div class="col-md-4 mt-3">
+        <div class="card p-3">
+          <h5>🩸 توزيع المتطوعين حسب فصيلة الدم</h5>
+          <canvas baseChart
+                  [data]="bloodChartData"
+                  [options]="bloodChartOptions"
+                  chartType="line">
+          </canvas>
+        </div>
+      </div>
+
+      <!-- Radar Chart - Active vs Inactive Volunteers -->
+      <div class="col-md-4 mt-3">
+        <div class="card p-3">
+          <h5>✅ مقارنة المتطوعين النشطين وغير النشطين</h5>
+          <canvas baseChart
+                  [data]="activityChartData"
+                  [options]="activityChartOptions"
+                  chartType="radar">
+          </canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
