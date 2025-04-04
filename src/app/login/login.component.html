@@ -1,18 +1,18 @@
 <div class="container-fluid" style="background:rgba(98, 37, 153,0.8); background-size: cover; direction: rtl; text-align: right;">
   <div class="row d-flex justify-content-center">
-    <div class="vh-100 col-12 d-flex justify-content-center p-lg-5 p-sm-3" data-aos="fade-up">
+    <div class="vh-100 col-12 d-flex justify-content-center p-lg-5" data-aos="fade-up">
 
-      <form [formGroup]="loginForm" class="col-lg-6 mat-elevation-z4 rounded-5 border p-3 p-lg-5 my-auto bg-white text-center">
+      <form [formGroup]="loginForm" class="col-lg-6 mat-elevation-z4 rounded-2 border p-3 p-lg-5 my-auto bg-white text-center">
 
         <p class="display-4 fw-bold text-center" style="color:rgba(98, 37, 153);">
-          كشافة أطلس
+          أطلس الكشافة
         </p>
-        <p class="h4 mb-3 fw-normal text-center">يرجى تسجيل الدخول</p>
+        <p class="mt-5 mb-3 fw-normal text-center">يرجى تسجيل الدخول</p>
 
         <!-- 📧 البريد الإلكتروني -->
         <mat-form-field appearance="fill" class="w-75">
           <mat-label>البريد الإلكتروني</mat-label>
-          <input matInput type="email" class="form-control" formControlName="email" placeholder="example@example.com">
+          <input autofocus matInput type="email" class="form-control" formControlName="email" placeholder="example@example.com">
           <mat-error *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.hasError('required')"
                      class="text-danger">يرجى إدخال بريد إلكتروني صالح.</mat-error>
         </mat-form-field>

@@ -1,6 +1,6 @@
 <app-nav-bar></app-nav-bar>
 
-<section id="inscription" class="py-5" style="direction: rtl; text-align: right;">
+<section *ngIf="!isSuccessRegister.getValue()" id="inscription" class="py-5" style="direction: rtl; text-align: right;">
   <div class="container">
     <h2 class="display-4 text-center fw-bold primary-color mb-4">التسجيل</h2>
     <p class="text-muted text-center mb-4">
@@ -10,7 +10,7 @@
     <div class="row">
       <div class="col-md-12 mx-auto bg-light mat-elevation-z2 p-5 rounded-3 shadow-sm">
 
-        <mat-horizontal-stepper #stepper labelPosition="bottom">
+        <mat-horizontal-stepper  [orientation]="isSmallScreen ? 'vertical' : 'horizontal'" #stepper labelPosition="bottom">
 
           <!-- ✅ الخطوة 1: المعلومات الشخصية -->
           <!-- ✅ الخطوة 1: المعلومات الشخصية -->
@@ -22,7 +22,7 @@
                 <!-- الاسم الأول -->
                 <div class="mb-3 col-lg-6">
                   <mat-form-field appearance="fill" class="w-100">
-                    <mat-label>الاسم الأول</mat-label>
+                    <mat-label>الإسم الشخصي </mat-label>
                     <input matInput formControlName="name" placeholder="أدخل اسمك" required>
                   </mat-form-field>
                 </div>
@@ -30,7 +30,7 @@
                 <!-- اللقب -->
                 <div class="mb-3 col-lg-6">
                   <mat-form-field appearance="fill" class="w-100">
-                    <mat-label>اللقب</mat-label>
+                    <mat-label>الإسم العائلي </mat-label>
                     <input matInput formControlName="lastName" placeholder="أدخل لقبك" required>
                   </mat-form-field>
                 </div>
@@ -194,8 +194,12 @@
                 <!-- المنظمة -->
                 <div class="mb-3 col-lg-6">
                   <mat-form-field appearance="fill" class="w-100">
-                    <mat-label>المنظمة</mat-label>
-                    <input matInput formControlName="organisation" placeholder="أدخل اسم المنظمة" required>
+                      <mat-select  formControlName="organisation" required  placeholder="أدخل  المنظمة">
+                        <mat-option  value="الكشفية الحسنية المغربية">الكشفية الحسنية المغربية</mat-option>
+                        <mat-option  value="منظمة الكشاف المغربي">منظمة الكشاف المغربي</mat-option>
+                        <mat-option  value="المنظمة المغربية للكشافة والمرشدات">المنظمة المغربية للكشافة والمرشدات</mat-option>
+                        <mat-option  value="أخرى ">أخرى </mat-option>
+                      </mat-select>
                   </mat-form-field>
                 </div>
 
@@ -204,9 +208,9 @@
                   <mat-form-field appearance="fill" class="w-100">
                     <mat-label>دورك في المنظمة</mat-label>
                     <mat-select formControlName="roleId" required>
-                      <mat-option value="leader">قائد</mat-option>
-                      <mat-option value="volunteer">متطوع</mat-option>
-                      <mat-option value="member">عضو</mat-option>
+                      <mat-option value="قائد">قائد</mat-option>
+                      <mat-option value="متطوع">متطوع</mat-option>
+                      <mat-option value="عضو">عضو</mat-option>
                     </mat-select>
                   </mat-form-field>
                 </div>
@@ -239,15 +243,19 @@
                 <div class="mb-3 col-lg-6">
                   <mat-form-field appearance="fill" class="w-100">
                     <mat-label>المدينة</mat-label>
-                    <input matInput formControlName="cityId" placeholder="أدخل اسم مدينتك" required>
+                    <mat-select formControlName="cityId" required placeholder="أدخل اسم مدينتك">
+                      <mat-option *ngFor="let city of cities.getValue()" [value]="city.id">{{ city.name }}</mat-option>
+                    </mat-select>
                   </mat-form-field>
                 </div>
 
                 <!-- المنطقة -->
                 <div class="mb-3 col-lg-6">
                   <mat-form-field appearance="fill" class="w-100">
-                    <mat-label>المنطقة</mat-label>
-                    <input matInput formControlName="regionId" placeholder="أدخل منطقتك" required>
+                    <mat-label>الجهة</mat-label>
+                    <mat-select formControlName="regionId" required  placeholder="أدخل الجهة">
+                      <mat-option *ngFor="let region of regions.getValue()" [value]="region.id">{{ region.name }}</mat-option>
+                    </mat-select>
                   </mat-form-field>
                 </div>
               </div>
@@ -320,5 +328,21 @@
     </div>
   </div>
 </section>
+
+
+<section *ngIf="isSuccessRegister.getValue()" id="success" class="py-5 text-center" style="direction: rtl; text-align: right;">
+  <div class="container">
+    <div class="bg-light mat-elevation-z2 p-5 rounded-3 shadow-sm">
+      <h2 class="display-4 fw-bold text-success mb-4">تم التسجيل بنجاح!</h2>
+      <p class="text-muted fs-5">
+        شكرًا لانضمامك إلينا! سيتم التواصل معك قريبًا لمتابعة الخطوات التالية.
+      </p>
+      <div class="mt-4">
+        <a href="/" class="btn text-white bg-primary-color px-5"> الرئيسية</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 <app-footer></app-footer>

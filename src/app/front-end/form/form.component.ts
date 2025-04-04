@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from "@angular/material/button";
 import { MatFormFieldModule } from "@angular/material/form-field";
@@ -9,9 +9,14 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { HttpClientModule } from '@angular/common/http';
 import { VolunteerCreateDto } from '../../dtos/request/volunteer.create.dto';
 import { VolunteerService } from '../../services/volunteer.service';
-import { catchError, of, tap } from 'rxjs';
+import {BehaviorSubject, catchError, of, tap} from 'rxjs';
 import { FooterComponent } from '../footer/footer.component';
 import { NavBarComponent } from '../nav-bar/nav-bar.component';
+import {NgForOf, NgIf} from '@angular/common';
+import {CityResponseDto} from '../../dtos/response/city.response.dto';
+import {RegionResponseDto} from '../../dtos/response/region.response.dto';
+import {CitiesService} from '../../services/cities.service';
+import {RegionsService} from '../../services/regions.service';
 
 @Component({
   selector: 'app-form',
@@ -25,7 +30,9 @@ import { NavBarComponent } from '../nav-bar/nav-bar.component';
     ReactiveFormsModule,
     FooterComponent,
     NavBarComponent,
-    HttpClientModule
+    HttpClientModule,
+    NgForOf,
+    NgIf
   ],
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.css'],
@@ -35,11 +42,21 @@ export class FormComponent implements OnInit {
   medicalForm!: FormGroup;
   professionalForm!: FormGroup;
   scoutForm!: FormGroup;
+  isSuccessRegister:BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false)
+  cities:BehaviorSubject<CityResponseDto[]> = new BehaviorSubject<CityResponseDto[]>([])
+  regions:BehaviorSubject<RegionResponseDto[]> = new BehaviorSubject<RegionResponseDto[]>([])
+  isSmallScreen: boolean = window.innerWidth < 768; // Default on load
 
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event) {
+    this.isSmallScreen = window.innerWidth < 768; // Adjust when resizing
+  }
   constructor(
     private fb: FormBuilder,
     private volunteerService: VolunteerService,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private cityService: CitiesService,
+    private regionService: RegionsService
   ) {}
 
   ngOnInit() {
@@ -79,6 +96,15 @@ export class FormComponent implements OnInit {
       cityId: ["", [Validators.required]],
       regionId: ["", [Validators.required]],
     });
+
+
+    this.regionService.getAllRegions().subscribe(data => {
+      this.regions.next(data);
+    })
+
+    this.cityService.getAllCities().subscribe(data => {
+      this.cities.next(data);
+    })
   }
 
   onSubmit() {
@@ -104,6 +130,7 @@ export class FormComponent implements OnInit {
 
     this.volunteerService.createVolunteer(volunteer).pipe(
       tap((response) => {
+        this.isSuccessRegister.next(true);
         this.snackBar.open(`مرحبًا بك في عالم المتطوعين ${response.name} ${response.lastName}`, "موافق", { duration: 3000 });
       }),
       catchError((error) => {

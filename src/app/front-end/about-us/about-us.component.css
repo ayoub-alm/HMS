@@ -1,0 +1,122 @@
+/* Global Styles */
+html, body { height: 100%; }
+body { margin: 0; }
+* {
+  font-family: "Noto Kufi Arabic", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+html[dir="rtl"] body {
+  direction: rtl;
+  text-align: right;
+}
+
+.text {
+  text-align: left;
+}
+[dir="rtl"] .text {
+  text-align: right;
+}
+
+/* Color Theme */
+.secondary-color { color: rgba(0, 148, 180) !important; }
+.primary-color { color: rgba(98, 37, 153) !important; }
+.bg-secondary-color { background: rgba(0, 148, 180) !important; }
+.bg-primary-color { background: rgba(98, 37, 153) !important; }
+.orange-color { color: rgba(255, 174, 128) !important; }
+.bg-orange-color { background: rgba(255, 174, 128) !important; }
+
+/* Custom Card Styling */
+/*.custom-card {*/
+/*  background: white;*/
+/*  border-radius: 15px;*/
+/*  padding: 20px;*/
+/*  text-align: center;*/
+/*  width: 300px;*/
+/*  margin: 10px;*/
+/*  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);*/
+/*  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;*/
+/*}*/
+
+.custom-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Mat Icon Customization */
+mat-icon {
+  font-size: 3rem !important; /* Increase icon size */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+.icon-style {
+  color: #f57c00; /* Orange color */
+  font-size: 50px !important; /* Bigger icon */
+  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.icon-style:hover {
+  color: #ff9800; /* Lighter orange on hover */
+  transform: scale(1.1); /* Slightly bigger */
+}
+
+
+/* Activities Section */
+.activities-section {
+  background: linear-gradient(250deg, rgba(255, 152, 0, 0.52), #ec7652);
+  /*border-radius: 5px;*/
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  color: white;
+  transition: transform 0.3s ease-in-out;
+}
+
+
+
+/* Section Title */
+.section-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Activities List */
+
+
+
+
+.card-img-top{
+  max-height:15rem !important;
+  max-width:15rem !important;
+  text-align: center;
+}
+
+.activities-container {
+  height: 250px; /* ارتفاع الصندوق */
+  overflow-y: auto;
+  scrollbar-width: none; /* إخفاء شريط التمرير */
+}
+
+.activities-container::-webkit-scrollbar {
+  display: none; /* إخفاء شريط التمرير لمتصفح كروم */
+}
+
+.activity-item {
+  background: #f8f9fa;
+  border-radius: 10px;
+}
+.orange-glass{
+  /* From https://css.glass */
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.43);
+  border-radius: 6px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5.5px);
+  -webkit-backdrop-filter: blur(5.5px);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+}
