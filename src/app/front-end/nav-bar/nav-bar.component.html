@@ -1,18 +1,33 @@
 <div class="container-fluid p-2 bg-white sticky-top border-bottom px-5" style="direction: rtl; text-align: right;">
-
   <div class="d-flex flex-column flex-md-row align-items-center">
-    <a href="/" class="d-flex align-items-center link-body-emphasis text-decoration-none">
-      <img src="/fnsm_logo_mini.png" class="navbar-brand img-fluid" width="40">
+
+    <!-- Logo -->
+    <a routerLink="/" class="d-flex align-items-center text-decoration-none">
+      <img src="/fnsm_logo_mini.png" alt="FNSM Logo" class="navbar-brand img-fluid" width="40">
     </a>
 
+    <!-- Navigation -->
     <nav class="d-inline-flex mt-2 mt-md-0 me-md-auto">
-      <a class="ms-3 py-2 link-body-emphasis text-decoration-none" href="/">الرئيسية</a>
-      <a class="ms-3 py-2 link-body-emphasis text-decoration-none" href="/about-us">من نحن</a>
-      <a class="ms-3 py-2 link-body-emphasis text-decoration-none" href="/organisation-register">الإلتحاق بالجامعة </a>
-      <a class="py-2 link-body-emphasis text-decoration-none" routerLink="login">
+      <a class="ms-3 py-2 text-decoration-none text-secondary"
+         routerLink="/"
+         routerLinkActive="active"
+         [routerLinkActiveOptions]="{ exact: true }">الرئيسية</a>
+
+      <a class="ms-3 py-2 text-decoration-none text-secondary"
+         routerLink="/about-us"
+         routerLinkActive="active">من نحن</a>
+
+      <a class="ms-3 py-2 text-decoration-none text-secondary"
+         routerLink="/organisation-register"
+         routerLinkActive="active"
+         [routerLinkActiveOptions]="{ exact: true }">انضم إلينا</a>
+
+      <a class="py-2 text-decoration-none"
+         routerLink="/login"
+         routerLinkActive="active">
         <mat-icon class="material-symbols-outlined primary-color">account_circle</mat-icon>
       </a>
     </nav>
-  </div>
 
+  </div>
 </div>

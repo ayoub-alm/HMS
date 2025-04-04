@@ -1,0 +1,4 @@
+a.active {
+  color: rgba(98, 37, 153)!important; /* Or use your .primary-color class */
+  font-weight: bold;
+}

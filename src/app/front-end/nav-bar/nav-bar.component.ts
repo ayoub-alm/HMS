@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {RouterLink} from '@angular/router';
+import {RouterLink, RouterLinkActive} from '@angular/router';
 import {MatIcon} from '@angular/material/icon';
 
 @Component({
@@ -7,7 +7,8 @@ import {MatIcon} from '@angular/material/icon';
   standalone: true,
   imports: [
     RouterLink,
-    MatIcon
+    MatIcon,
+    RouterLinkActive
   ],
   templateUrl: './nav-bar.component.html',
   styleUrl: './nav-bar.component.css'
