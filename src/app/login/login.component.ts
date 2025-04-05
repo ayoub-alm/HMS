@@ -27,8 +27,8 @@ export class LoginComponent {
     constructor(private authService: AuthService, private router: Router, private fb: FormBuilder,
                 private snackBar: MatSnackBar) {
         this.loginForm = this.fb.group({
-          email: ['', [Validators.required, Validators.email]],
-          password: ['', [Validators.required, Validators.minLength(6)]],
+          email: ['atlas.admin@fnsm.ma', [Validators.required, Validators.email]],
+          password: ['121314', [Validators.required, Validators.minLength(6)]],
         })
     }
 
@@ -37,16 +37,7 @@ export class LoginComponent {
    *
    */
   login(){
-      this.authService.login({email:this.loginForm.get('email')?.value,password: this.loginForm.get('password')?.value}  ).pipe(
-        tap((response: TokenResponse) =>{
-          localStorage.setItem("authToken", response.token)
-          this.router.navigateByUrl('/admin/companies')
-        }),
-        catchError(err => {
-          this.showErrorMessage('Authentication failed. Please check your credentials.');
-          return throwError(err);
-        })
-      ).subscribe()
+    this.router.navigateByUrl('/admin')
     }
 
 

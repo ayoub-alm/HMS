@@ -7,8 +7,9 @@ import {VolunteerDashboardComponent} from './volunteer-dashboard/volunteer-dashb
 
 const routes: Routes = [
   { path: 'dashboard', component: VolunteerDashboardComponent },
-  { path: '', component: VolunteerIndexComponent },
+  { path: '', component: VolunteerDashboardComponent },
   { path: ':id', component: VolunteerShowComponent },
+  // { path: '**', component: VolunteerDashboardComponent },
 
 ];
 
