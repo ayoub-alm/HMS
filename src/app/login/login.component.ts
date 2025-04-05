@@ -37,8 +37,8 @@ export class LoginComponent {
    *
    */
   login(){
-    this.router.navigateByUrl('/admin')
-    }
+    this.router.navigateByUrl('/admin');
+  }
 
 
   private showErrorMessage(message: string): void {
